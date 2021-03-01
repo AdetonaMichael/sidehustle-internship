@@ -1,6 +1,10 @@
 <?php
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+    $email = "";
+    $password ="";
+  if(isset($_POST['email']) && isset($_POST['password'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+  }
 ?>
 
 <html lang="en">
@@ -15,7 +19,7 @@
     <div class="container">
        <div class="row">
            <div class="col-md-8">
-           <form method="post" action="" class="m-5 style=" style="border: 3px solid black; margin-top:100px solid black; padding:100px;">
+           <form method="post" action="" class="m-5 style=" style="border: 1px solid gray; padding:100px;">
        <div class="form-group">
            <label for="email">Enter Email </label>
            <input type="text" class="form-control" name="email" id="myemail" required>
@@ -34,6 +38,6 @@
        </div>
     </div>
        
-       <h2 class="m-5 text-center"><?php echo "the emil is: ".$email."  and the password is:".$password; ?> </h2>
+       <h2 class="m-5 text-center"><?php echo $email."<br/>".$password; ?> </h2>
 </body>
 </html>
